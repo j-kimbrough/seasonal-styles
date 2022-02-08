@@ -100,7 +100,44 @@
 			var datetext = $('input[name=dateField]').val();//grab data from textbox
 			var formDate = new Date(datetext);//create a date from form input
 			var today = new Date();
-			
+			var month = formDate.getMonth();
+            switch(month){
+                case 0:
+                case 1:
+                case 2:
+                $("#wear").attr('src','images/winter-wear.jpg');
+                    $("#logo").attr('src','images/winter.gif');
+                    $("header > h3").css('color', '#005393');
+                    $("html").css('backgroundColor', '#005393');
+                break;
+
+                case 3:
+                case 4:
+                case 5:  
+                    $("#wear").attr('src','images/spring-wear.jpg');
+                    $("#logo").attr('src','images/spring.gif');
+                    $("header > h3").css('color', '#2B7129');
+                    $("html").css('backgroundColor', '#2B7129');
+                break;
+
+                case 6:
+	            case 7:
+	            case 8:
+                    $("#wear").attr('src','images/summer-wear.jpg');
+                    $("#logo").attr('src','images/summer.gif');
+                    $("header > h3").css('color', '#EBA52B');
+                    $("html").css('backgroundColor', '#EBA52B');
+                break;
+
+                case 9:
+                case 10: 
+                case 11:
+                    $("#wear").attr('src','images/fall-wear.jpg');
+                    $("#logo").attr('src','images/fall.gif');
+                    $("header > h3").css('color', '#A81124');
+                    $("html").css('backgroundColor', '#A81124');
+                break;
+            }
 			if(formDate > today)
 			{
 				alert(datetext + " is in the future!");
